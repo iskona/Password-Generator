@@ -1,0 +1,58 @@
+body {
+    background-color: azure;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+}
+
+hr {
+    border-style: none;
+    border-top: 1px solid #ccc;
+}
+textarea {
+    margin-top: 5px;
+    font-size: 15px;
+    width: 100%;
+    text-align: center;
+    height: 100px;
+    padding-top: 15px;
+}
+
+button {
+    text-align: center;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 25px;
+    font-size: .5rem;
+}
+
+.border {
+    border: 1px solid #ccc;
+}
+
+.container {
+    background-color: white;
+    padding: 7%;
+    position: relative;
+    height: 300px;
+}
+
+#password {
+    border: 1px dashed #ccc;
+    border-radius: 15px;
+}
+
+#generate {
+    background-color: cadetblue;
+    color: white;
+    float: left;
+}
+
+#copy {
+    background-color: cornflowerblue;
+    color: white;
+    float: right;
+    position: absolute;
+}
