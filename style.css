@@ -35,7 +35,7 @@ button {
 .container {
     background-color: white;
     padding: 7%;
-    position: relative;
+    /* position: relative; */
     height: 300px;
 }
 
@@ -53,6 +53,6 @@ button {
 #copy {
     background-color: cornflowerblue;
     color: white;
-    float: right;
-    position: absolute;
+    float: left;
+    /* position: absolute; */
 }
