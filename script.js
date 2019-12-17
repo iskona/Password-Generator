@@ -6,8 +6,8 @@ var getLength = function () {
         alert("It looks like your password length is incorrect. Please try again.");
         getLength();
     }
-    console.log(pswdLength);
 }
+getLength();
 
 var special;
 var number;
@@ -15,7 +15,6 @@ var lowercase;
 var capital;
 
 var getCharType = function () {
-    getLength();
     special = confirm("Do you want your password contains Special characters?");
     number = confirm("Do you want your password contains Numeric characters?");
     lowercase = confirm("Do you want your password contains Lower case characters?");
@@ -25,53 +24,34 @@ var getCharType = function () {
         alert("It looks like you didn't choose ane of character type. Please try again.");
         getCharType();
     };
-    console.log(special, number, lowercase, capital);
-
 }
 getCharType();
 
-
-var allNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-var lowerCaseLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-var upperCaseLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-var specCharArr = [];
+var allNumbers = "0123456789";
+var lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
+var upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var specChar = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
-for (let i = 0; i < specChar.length; i++) {
-    specCharArr.push(specChar[i]);
-}
 
-var wholePassword = [];
+var wholeCharSet;
 if (special === true) {
-    for (let i = 0; i < specCharArr.length; i++) {
-        wholePassword.push(specCharArr[i]);
-    }
+    wholeCharSet += specChar;
 }
 if (number === true) {
-    for (let i = 0; i < allNumbers.length; i++) {
-        wholePassword.push(allNumbers[i]);
-    }
+    wholeCharSet += allNumbers;
 }
 if (lowercase === true) {
-    for (let i = 0; i < lowerCaseLetters.length; i++) {
-        wholePassword.push(lowerCaseLetters[i]);
-    }
+    wholeCharSet += lowerCaseLetters;
 }
 if (capital === true) {
-    for (let i = 0; i < upperCaseLetters.length; i++) {
-        wholePassword.push(upperCaseLetters[i]);
-    }
+    wholeCharSet += upperCaseLetters;
 }
 
-var generateEl = document.getElementById('generate');
-var textArea = document.getElementById('password');
-var myPassword = [];
-
 function generatePswd() {
-    myPassword = [];
+    var textArea = document.getElementById('password');
+    var myPassword = "";
     for (var i = 0; i < pswdLength; i++) {
-        myPassword.push(wholePassword[Math.floor(Math.random() * wholePassword.length)]);
+        myPassword += wholeCharSet[Math.floor(Math.random() * wholeCharSet.length)];
     }
-    myPassword.toString();
     console.log("Your password is: " + myPassword);
     textArea.textContent = myPassword;
 };
@@ -83,4 +63,3 @@ function copyText() {
     document.execCommand("copy");
     alert("Copied the text: " + copyText.value);
 };
-
