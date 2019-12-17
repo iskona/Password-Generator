@@ -35,7 +35,6 @@ button {
 .container {
     background-color: white;
     padding: 7%;
-    /* position: relative; */
     height: 300px;
 }
 
@@ -54,5 +53,4 @@ button {
     background-color: cornflowerblue;
     color: white;
     float: left;
-    /* position: absolute; */
 }
